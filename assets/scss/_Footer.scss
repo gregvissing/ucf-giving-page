@@ -1,0 +1,68 @@
+footer {
+    background: $black;
+    margin-top: 5em;
+    padding-bottom: 1.5em;
+
+    >.container {
+        @include media("<=desktop") {
+            max-width: 95% !important;
+
+            .container {
+                max-width: 100% !important;
+            }
+        }
+    }
+
+    .container {
+        .row {
+            .col {
+                padding-top: 2em;
+                padding-bottom: 2em;
+
+                h4,
+                p,
+                a {
+                    color: $white;
+                    margin: 0;
+                }
+
+                h4 {
+                    color: $red;
+                    font-family: "Bree Serif";
+                }
+
+                p {
+                    font-size: 0.9em;
+                }
+
+                a {
+                    text-decoration: underline;
+                }
+
+                svg {
+                    margin-left: 3px;
+                    margin-right: 5px;
+
+                    path {
+                        fill: $red;
+                    }
+                }
+
+                .fab {
+                    margin-right: 5px;
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        padding: 10px 0;
+        background: rgba(255, 255, 255, 0.25);
+
+        .container {
+            color: $gray-light;
+            font-size: 0.9em;
+        }
+    }
+}

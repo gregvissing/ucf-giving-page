@@ -1,0 +1,67 @@
+$red: #e00122;
+$black: #000000;
+$white: #ffffff;
+
+$gray-darker: #444444;
+$gray-dark: #696969;
+$gray: #999999;
+$gray-light: #cccccc;
+$gray-lighter: #ececec;
+$gray-lightest: lighten($gray-lighter, 4%);
+
+// MIXINS
+// Columns
+$one: 8.33%;
+$two: 16.667%;
+$three: 25%;
+$four: 33.333%;
+$five: 41.667%;
+$six: 50%;
+$seven: 58.333%;
+$eight: 66.667%;
+$nine: 75%;
+$ten: 83.333%;
+$eleven: 91.667%;
+$twelve: 100%;
+
+$gutter: 1rem !global;
+
+// @include transition(all 0.4s ease);
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// Container Mixin
+@mixin grid($width: $container) {
+
+    $container: $width;
+
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    flex: 0 1 auto;
+
+    max-width: $container;
+    margin: 0 auto;
+
+}
+
+// Animations / Transitions
+
+.slide-enter-active,
+.slide-leave-active {
+    // /* margin-left: 0%; */
+    // @include transition(all 1.5s linear);
+    transition: opacity 1.5s ease-in;
+}
+
+.slide-enter,
+.slide-leave-to {
+    margin-left: -130%;
+    opacity: 0;
+}

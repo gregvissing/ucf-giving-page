@@ -1,0 +1,40 @@
+#giftTypes {
+    label {
+        position: relative;
+        border: 1px solid $black;
+        cursor: pointer;
+
+        &.active {
+            &.focus {
+                box-shadow: none !important;
+                outline: none !important;
+            }
+        }
+
+        >span {
+            text-align: center;
+            // // position: absolute;
+            // left: 0;
+            // right: 0;
+            // height: 90px;
+            // border: 1px solid $black;
+        }
+
+        &:after {
+            content: '';
+            clear: both;
+            display: block;
+            height: 1px;
+        }
+    }
+}
+
+input {
+    border-radius: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

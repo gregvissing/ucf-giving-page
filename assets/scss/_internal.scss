@@ -1,0 +1,47 @@
+.internal {
+    >.container {
+        @include media("<=desktop") {
+            max-width: 100% !important;
+
+            .container {
+                max-width: 100% !important;
+            }
+        }
+    }
+
+    #internal-hero {
+        margin-top: 80px;
+        background-color: $black;
+        background: url("https://foundation.uc.edu/image/annual-report/2018/letters/UC-Campus-Scenes0232.jpg");
+        background-position: center;
+        height: 100px;
+        width: 100%;
+        margin-bottom: 2em;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 60px;
+            width: 50%;
+            background-color: $black;
+            clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+        }
+
+        .container {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 5;
+
+            h1 {
+                color: $white;
+                margin: 0 !important;
+            }
+        }
+    }
+}

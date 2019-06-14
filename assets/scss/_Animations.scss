@@ -1,0 +1,103 @@
+// Page body
+
+.router-anim-enter-active {
+    animation: coming 1s;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.router-anim-leave-active {
+    animation: going 1s;
+}
+
+@keyframes going {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes coming {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// Internal Title
+
+.title-anim-enter-active {
+    animation: titlecoming 1s;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.title-anim-leave-active {
+    animation: titlegoing 1s;
+}
+
+@keyframes titlegoing {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes titlecoming {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+// .titleanim-enter-active,
+// .titleanim-leave-active {
+//     animation: title-in .8s;
+// }
+
+// .titleanim-enter,
+// .titleanim-leave-active {
+//     animation: title-out .5s;
+// }
+
+// @keyframes titleanim-in {
+//     from {
+//         transform: translateY(-50px);
+//         opacity: 0;
+//     }
+
+//     to {
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes titleanim-out {
+//     from {
+//         transform: translateY(0);
+//     }
+
+//     to {
+//         transform: translateY(-50px);
+//         opacity: 0;
+//     }
+// }

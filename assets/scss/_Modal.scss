@@ -1,0 +1,83 @@
+// MODAL styles
+.b-modal-target {
+    .modal {
+        .modal-dialog {
+            margin: 1.75rem auto;
+
+            &.modal-xl {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0;
+
+                .modal-content {
+                    height: 100vh;
+
+                    .modal-header {
+                        .close {
+                            background-color: $red !important;
+                            color: $white !important;
+                        }
+                    }
+                }
+            }
+
+            .modal-content {
+                border-radius: 0 !important;
+
+                header.modal-header {
+                    border-radius: 0 !important;
+
+                    .close {
+                        background-color: $black !important;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        &#searchModal,
+        &#formModal {
+            header {
+                border-bottom: none !important;
+            }
+        }
+    }
+}
+
+.modal-xl {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+
+    .modal-content {
+        height: 100vh;
+
+        .modal-header {
+            .close {
+                background-color: $red !important;
+                color: $white !important;
+            }
+        }
+    }
+}
+
+.modal-title {
+    text-align: center !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+}
+
+.modal-content,
+.modal-header {
+    border-radius: 0 !important;
+}
+
+#searchModal {
+    .modal-body {
+        // padding-top: 2em;
+    }
+}
+
+// END: MODAL styles

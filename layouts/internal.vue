@@ -28,8 +28,8 @@
         <b-container>
             <transition
                 name="router-anim"
-                enter-active-class="animated fadeInLeft"
-                leave-active-class="animated fadeOutRight"
+                enter-active-class="animated fadeIn"
+                leave-active-class="animated fadeOut"
             >
                 <nuxt/>
             </transition>

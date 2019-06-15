@@ -99,10 +99,10 @@ export default {
     },
 
     /* Layout Transitions */
-    transition: {
-        name: "title-anim",
-        mode: "out-in"
-    },
+    // transition: {
+    //     name: "title-anim",
+    //     mode: "out-in"
+    // },
     /* Page Transitions */
     // pageTransition: {
     //     name: "default",

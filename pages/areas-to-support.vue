@@ -1,5 +1,17 @@
 <template>
     <div>
+        <div id="internal-hero">
+            <b-container>
+                <transition
+                    name="title-anim"
+                    enter-active-class="animated fadeInUp"
+                    leave-active-class="animated fadeOutDown"
+                >
+                    <!-- {{ title }} -->
+                    <InternalTitle/>
+                </transition>
+            </b-container>
+        </div>
         <b-container class="main">
             <h3>Support the Causes Most Important to You</h3>
 
@@ -127,12 +139,16 @@ import axios from "axios";
 import { mapState } from "vuex";
 import { areas } from "@/store";
 import VueScrollTo from "vue-scrollto";
+import InternalTitle from "@/components/Page-Components/InternalTitle.vue";
 
 export default {
     name: "areas-to-support",
     pageTitle: "Areas to Support",
     scrollToTop: true,
     layout: "internal",
+    components: {
+        InternalTitle
+    },
     data() {
         return {
             areas: areas,
@@ -141,6 +157,16 @@ export default {
             selectedItem: [],
             options: []
         };
+    },
+    computed: {
+        ...mapState(["page"]),
+        title() {
+            return this.$route.matched.map(r => {
+                return r.components.default.options
+                    ? r.components.default.options.pageTitle
+                    : r.components.default.pageTitle;
+            })[0];
+        }
     },
     methods: {
         changeSelectVal: function(val) {

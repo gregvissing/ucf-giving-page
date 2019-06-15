@@ -35,7 +35,18 @@
 
 // Internal Title
 
-.title-anim-enter-active {
+// .title-anim-enter-active {
+//     animation: titlecoming 1s;
+//     animation-delay: 0.5s;
+//     opacity: 0;
+// }
+
+// .title-anim-leave-active {
+//     animation: titlegoing 1s;
+// }
+
+.title-anim-enter-active,
+.title-anim-leave-active {
     animation: titlecoming 1s;
     animation-delay: 0.5s;
     opacity: 0;
@@ -45,7 +56,18 @@
     animation: titlegoing 1s;
 }
 
-@keyframes titlegoing {
+// @keyframes titlegoing {
+//     from {
+//         transform: translateY(0);
+//     }
+
+//     to {
+//         transform: translateY(-50px);
+//         opacity: 0;
+//     }
+// }
+
+@-webkit-keyframes titlegoing {
     from {
         transform: translateY(0);
     }
@@ -56,7 +78,19 @@
     }
 }
 
-@keyframes titlecoming {
+// @keyframes titlecoming {
+//     from {
+//         transform: translateY(-50px);
+//         opacity: 0;
+//     }
+
+//     to {
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+// }
+
+@-webkit-keyframes titlecoming {
     from {
         transform: translateY(-50px);
         opacity: 0;

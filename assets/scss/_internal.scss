@@ -1,4 +1,44 @@
 .internal {
+    position: relative;
+
+    // &:before {
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     content: "";
+    //     background: url("~assets/images/UC-Campus-header.jpg");
+    //     background-position: center;
+    //     background-size: cover;
+    //     height: 100px;
+    //     width: 100%;
+    // }
+
+    .title-background {
+        background: url("~assets/images/UC-Campus-header.jpg");
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        height: 100px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 60px;
+            width: 50%;
+            background-color: $black;
+            clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+        }
+    }
+
     >.container {
         @include media("<=desktop") {
             max-width: 100% !important;
@@ -11,24 +51,24 @@
 
     #internal-hero {
         margin-top: 80px;
-        background-color: $black;
-        background: url("~assets/images/UC-Campus-header.jpg");
+        // background-color: $black;
+        // background: url("~assets/images/UC-Campus-header.jpg");
         background-position: center;
         height: 100px;
         width: 100%;
         margin-bottom: 2em;
         position: relative;
 
-        &:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 60px;
-            width: 50%;
-            background-color: $black;
-            clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
-        }
+        // &:after {
+        //     content: "";
+        //     position: absolute;
+        //     left: 0;
+        //     bottom: 0;
+        //     height: 60px;
+        //     width: 50%;
+        //     background-color: $black;
+        //     clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+        // }
 
         .container {
             position: absolute;

@@ -1,5 +1,18 @@
 <template>
     <div>
+        <div id="internal-hero">
+            <b-container>
+                <transition
+                    name="title-anim"
+                    enter-active-class="animated fadeInUp"
+                    leave-active-class="animated fadeOutDown"
+                    appear
+                >
+                    <!-- {{ title }} -->
+                    <InternalTitle/>
+                </transition>
+            </b-container>
+        </div>
         <b-container class="main">
             <p>Whether you want to support next-generation cancer research, international learning opportunities, UC Athletics or everything in between, we want to make it easy for you to make a difference at UC and UC Health. There are a variety of ways you give back, and we are excited to work with you in building toward the future. Through Matching Gifts, Planned Giving, and other giving options you can make sure that your gift has the greatest possible impact on the UC and UC Health.</p>
 
@@ -29,12 +42,16 @@ import Vuex from "vuex";
 import axios from "axios";
 import { mapState } from "vuex";
 import { ways } from "@/store";
+import InternalTitle from "@/components/Page-Components/InternalTitle.vue";
 
 export default {
     name: "ways-to-give",
     pageTitle: "Ways to Give",
     scrollToTop: true,
     layout: "internal",
+    components: {
+        InternalTitle
+    },
     props: {
         value: {
             default: ""
@@ -46,6 +63,16 @@ export default {
         name: {
             type: String,
             default: "name-filter"
+        }
+    },
+    computed: {
+        ...mapState(["page"]),
+        title() {
+            return this.$route.matched.map(r => {
+                return r.components.default.options
+                    ? r.components.default.options.pageTitle
+                    : r.components.default.pageTitle;
+            })[0];
         }
     }
 };

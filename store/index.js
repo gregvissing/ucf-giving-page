@@ -6,16 +6,16 @@ const createStore = () => {
         state: {
             page: 'index',
 
-            pages: [{
-                url: "ways-to-give",
-                text: "Ways to Give"
-            }, {
-                url: "areas-to-support",
-                text: "Areas To Support"
-            }, {
-                url: "why-give",
-                text: "Why Give"
-            }],
+            // pages: [{
+            //     url: "ways-to-give",
+            //     text: "Ways to Give"
+            // }, {
+            //     url: "areas-to-support",
+            //     text: "Areas To Support"
+            // }, {
+            //     url: "why-give",
+            //     text: "Why Give"
+            // }],
 
             form: {
                 Donor: {

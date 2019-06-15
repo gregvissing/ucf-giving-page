@@ -35,8 +35,6 @@ import { mapState, mapGetters } from "vuex";
 import Header from "@/components/Navigation/Header.vue";
 import Footer from "@/components/Footer/Footer.vue";
 
-// import Logo from "@/components/Page-Components/Logo.vue";
-
 export default {
     // data() {
     //     return {
@@ -47,7 +45,6 @@ export default {
         Header,
         Footer
         // InternalTitle
-        // Logo
     },
     computed: {
         ...mapState(["page"]),

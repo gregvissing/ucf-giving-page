@@ -1,5 +1,18 @@
 <template>
     <div>
+        <div id="internal-hero">
+            <b-container>
+                <transition
+                    name="title-anim"
+                    enter-active-class="animated fadeInUp"
+                    leave-active-class="animated fadeOutDown"
+                    appear
+                >
+                    <!-- {{ title }} -->
+                    <InternalTitle/>
+                </transition>
+            </b-container>
+        </div>
         <b-container class="main">
             <p>Your support of the University of Cincinnati and UC Health changes lives. From creating vital student scholarships to funding leading-edge research to providing for world-class patient care, our donors make a difference. Browse our Areas to Support database to see where you can make an impact at UC and UC Health.</p>
             <hr>
@@ -39,12 +52,16 @@ import Vuex from "vuex";
 import axios from "axios";
 import { mapState } from "vuex";
 import { whygive } from "@/store";
+import InternalTitle from "@/components/Page-Components/InternalTitle.vue";
 
 export default {
     name: "why-give",
     pageTitle: "Why Give",
     scrollToTop: true,
     layout: "internal",
+    components: {
+        InternalTitle
+    },
     data() {
         return {
             cards: whygive,
@@ -59,7 +76,14 @@ export default {
     },
 
     computed: {
-        ...mapState(["page"])
+        ...mapState(["page"]),
+        title() {
+            return this.$route.matched.map(r => {
+                return r.components.default.options
+                    ? r.components.default.options.pageTitle
+                    : r.components.default.pageTitle;
+            })[0];
+        }
     }
 };
 </script>

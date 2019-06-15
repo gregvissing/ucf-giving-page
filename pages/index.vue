@@ -25,7 +25,7 @@ import ImpactStories from "~/components/Page-Components/ImpactStories.vue";
 
 export default {
     scrollToTop: true,
-    // layout: "default",
+    layout: "default",
     components: {
         Hero,
         Areas,

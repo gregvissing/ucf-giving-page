@@ -4,15 +4,6 @@
         <p>Your gift to the UC and UC Health makes an impact where you want. Give to your favorite college, program or department, or contribute to the university’s most pressing needs.</p>
 
         <Carousel/>
-
-        <!-- <div class="marquee">
-            <div v-for="(area, index) in alphaAreas" :key="index" class="slideitem">
-                <a href="#">
-                    <font-awesome-icon size="2x" :icon="area.icon" :style="{ color: area.color }"/>
-                    <h4 class="theme">{{ area.text }}</h4>
-                </a>
-            </div>
-        </div>-->
     </b-container>
 </template>
 

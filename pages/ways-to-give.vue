@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import Vuex from "vuex";
+import axios from "axios";
 import { mapState } from "vuex";
 import { ways } from "@/store";
 
@@ -32,7 +34,7 @@ export default {
     name: "ways-to-give",
     pageTitle: "Ways to Give",
     scrollToTop: true,
-    layout: "default",
+    layout: "internal",
     props: {
         value: {
             default: ""
@@ -43,7 +45,7 @@ export default {
         },
         name: {
             type: String,
-            default: "tech-filter"
+            default: "name-filter"
         }
     }
 };

@@ -1,35 +1,24 @@
 <template>
-    <section :class="{
-    'internal' : (page != 'index'),
+    <!-- <section
+        :class="{
+    'internal area' : (page === 'areas-to-support'),
+    'internal ways' : (page === 'ways-to-give'),
+    'internal why' : (page === 'why-give'),
     'home' : (page === 'index')
-    }">
+    }"
+    >-->
+    <section class="home">
         <Header/>
-
-        <div id="internal-hero" v-if="page != 'index'">
-            <b-container>
-                <!-- <transition
-                    name="title-anim"
-                    enter-active-class="animated fadeInUp"
-                    leave-active-class="animated fadeOutDown"
-                    key="titlebar"
-                >-->
-                <transition @enter="enterEl" @leave="leaveEl" :css="false" appear>
-                    <InternalTitle/>
-                </transition>
-            </b-container>
-        </div>
 
         <transition
             name="router-anim"
-            enter-active-class="animated fadeInLeft"
-            leave-active-class="animated fadeOutRight"
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut"
         >
             <nuxt/>
         </transition>
 
         <Footer/>
-
-        <!-- <FormModal id="formModal"/> -->
 
         <a class="scrollToTop" href="#" @click.prevent="scrollToTop">
             <span style="font-size: 1.25em;">
@@ -37,6 +26,7 @@
             </span>
         </a>
     </section>
+    <!-- <Logo v-if="show"/> -->
 </template>
 
 <script>
@@ -44,20 +34,20 @@ import $ from "jquery";
 import { mapState, mapGetters } from "vuex";
 import Header from "@/components/Navigation/Header.vue";
 import Footer from "@/components/Footer/Footer.vue";
-import InternalTitle from "@/components/Page-Components/InternalTitle.vue";
-// import FormModal from "~/components/Modal/FormModal.vue";
+
+// import Logo from "@/components/Page-Components/Logo.vue";
 
 export default {
-    data() {
-        return {
-            show: true
-        };
-    },
+    // data() {
+    //     return {
+    //         show: true
+    //     };
+    // },
     components: {
         Header,
-        Footer,
-        InternalTitle
-        // FormModal
+        Footer
+        // InternalTitle
+        // Logo
     },
     computed: {
         ...mapState(["page"]),
@@ -84,24 +74,45 @@ export default {
         },
         destroyed() {
             window.removeEventListener("scroll", this.handleScroll);
-        },
-        enterEl(el, done) {
-            //entrance animation
-            console.log("enter");
-            done();
-        },
-        leaveEl(el, done) {
-            //exit animation
-            console.log("exit");
-            done();
         }
-        // showFormModal() {
-        //     // this.selectedFund = item;
-        //     this.$root.$emit("bv::show::modal", "formModal");
-        // }
     }
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/style.scss";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+
+.title-anim-enter-active {
+    animation: titlecoming 1s;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.title-anim-leave-active {
+    animation: titlegoing 1s;
+}
+
+@keyframes titlegoing {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes titlecoming {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 </style>

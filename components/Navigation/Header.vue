@@ -1,80 +1,100 @@
 <template>
-    <header class="index">
-        <b-navbar toggleable="lg" fixed="top">
-            <b-container>
-                <b-navbar-brand class="d-flex align-items-center">
-                    <nuxt-link to="/">
-                        <img
-                            src="https://foundation.uc.edu/file/projects/give-to-uc/images/logo-ucFoundation-white.png"
-                        >
-                    </nuxt-link>
-                </b-navbar-brand>
-                <b-collapse is-nav id="nav_text_collapse">
-                    <b-navbar-nav class="ml-auto">
-                        <b-nav-item to="/ways-to-give">WAYS TO GIVE</b-nav-item>
-                        <b-nav-item to="/why-give">WHY GIVE</b-nav-item>
-                        <b-nav-item to="/areas-to-support">AREAS TO SUPPORT</b-nav-item>
-                        <!-- <b-nav-item class="donate" to="/donate">DONATE NOW</b-nav-item> -->
-                        <b-nav-item class="donate" v-b-modal.formModal>DONATE NOW</b-nav-item>
-                        <b-nav-item class="search" @click.prevent="searchToggle">
-                            <i class="fas fa-search"></i>
-                        </b-nav-item>
-                        <!-- <b-nav-item class="cart" to="/cart/" v-show="cartTotal > 0">
+    <div>
+        <header class="index">
+            <b-navbar toggleable="lg" fixed="top">
+                <b-container>
+                    <b-navbar-brand class="d-flex align-items-center">
+                        <nuxt-link to="/">
+                            <img
+                                src="https://foundation.uc.edu/file/projects/give-to-uc/images/logo-ucFoundation-white.png"
+                            >
+                        </nuxt-link>
+                    </b-navbar-brand>
+                    <b-collapse is-nav id="nav_text_collapse">
+                        <b-navbar-nav class="ml-auto">
+                            <b-nav-item :to="{ name: 'ways-to-give' }">WAYS TO GIVE</b-nav-item>
+                            <b-nav-item :to="{ name: 'why-give' }">WHY GIVE</b-nav-item>
+                            <b-nav-item :to="{ name: 'areas-to-support' }">AREAS TO SUPPORT</b-nav-item>
+                            <!-- <b-nav-item class="donate" to="/donate">DONATE NOW</b-nav-item> -->
+                            <b-nav-item class="donate" v-b-modal.formModal>DONATE NOW</b-nav-item>
+                            <b-nav-item class="search" @click.prevent="searchToggle">
+                                <i class="fas fa-search"></i>
+                            </b-nav-item>
+                            <!-- <b-nav-item class="cart" to="/cart/" v-show="cartTotal > 0">
                             <div class="cartitem">
                                 <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
                                 <img src="~/assets/images/baseline-card_giftcard-24px.svg">
 
-                        </div>-->
-                        <!-- <font-awesome-icon icon="shopping-cart" size="lg"/> -->
-                        <!-- </b-nav-item> -->
-                    </b-navbar-nav>
-                    <div class="search-container animateblock close">
-                        <b-form-input
-                            class="searchInput"
-                            v-model="searchText"
-                            placeholder="Enter Fund Name then hit Enter"
-                            @keyup.enter="searchFunds"
-                        ></b-form-input>
-                        <b-form-group class="filter-boxes">
-                            <b-form-checkbox-group
-                                id="checkbox-filter"
-                                v-model="selected"
-                                name="search-filter"
-                            >
-                                <b-form-checkbox value="funds">
-                                    <label>Funds</label>
-                                </b-form-checkbox>
-                                <b-form-checkbox value="areas">
-                                    <label>Areas</label>
-                                </b-form-checkbox>
-                            </b-form-checkbox-group>
-                        </b-form-group>
+                            </div>-->
+                            <!-- <font-awesome-icon icon="shopping-cart" size="lg"/> -->
+                            <!-- </b-nav-item> -->
+                        </b-navbar-nav>
+                        <div class="search-container animateblock close">
+                            <b-form-input
+                                class="searchInput"
+                                v-model="searchText"
+                                placeholder="Enter Fund Name then hit Enter"
+                                @keyup.enter="searchFunds"
+                            ></b-form-input>
+                            <b-form-group class="filter-boxes">
+                                <b-form-checkbox-group
+                                    id="checkbox-filter"
+                                    v-model="selected"
+                                    name="search-filter"
+                                >
+                                    <b-form-checkbox value="funds">
+                                        <label>Funds</label>
+                                    </b-form-checkbox>
+                                    <b-form-checkbox value="areas">
+                                        <label>Areas</label>
+                                    </b-form-checkbox>
+                                </b-form-checkbox-group>
+                            </b-form-group>
+                        </div>
+                    </b-collapse>
+
+                    <div class="mobile cartitem">
+                        <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
+                        <!-- <img src="~/assets/images/baseline-card_giftcard-24px.svg"> -->
                     </div>
-                </b-collapse>
 
-                <div class="mobile cartitem">
-                    <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
-                    <!-- <img src="~/assets/images/baseline-card_giftcard-24px.svg"> -->
-                </div>
+                    <b-navbar-toggle
+                        class="navbar-light menuWrapper"
+                        target="nav_text_collapse"
+                        @click="custonNavToggle"
+                    >
+                        <div class="menu"></div>
+                    </b-navbar-toggle>
+                </b-container>
+            </b-navbar>
 
-                <b-navbar-toggle
-                    class="navbar-light menuWrapper"
-                    target="nav_text_collapse"
-                    @click="custonNavToggle"
-                >
-                    <div class="menu"></div>
-                </b-navbar-toggle>
-            </b-container>
-        </b-navbar>
+            <FormModal id="formModal"/>
+        </header>
 
-        <FormModal id="formModal"/>
-    </header>
+        <!-- <div id="internal-hero" v-if="page === 'why-give'"> -->
+        <!-- <div id="internal-hero"> -->
+        <!-- <b-container> -->
+        <!-- <transition
+                    name="title"
+                    mode="out-in"
+                    enter-active-class="animated fadeInUp"
+                    leave-active-class="animated fadeOutDown"
+                    appear
+        >-->
+        <!-- {{ page }} -->
+        <!-- <InternalTitle/> -->
+        <!-- </transition> -->
+        <!-- </b-container>
+        </div>-->
+        <!-- v-else-if= -->
+    </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from "vuex";
 import $ from "jquery";
 
+// import InternalTitle from "@/components/Page-Components/InternalTitle.vue";
 import FormModal from "~/components/Modal/FormModal.vue";
 
 export default {
@@ -86,12 +106,23 @@ export default {
     },
     components: {
         FormModal
+        // InternalTitle
     },
     computed: {
         cartTotal() {
             return this.$store.state.cartTotal;
         },
-        ...mapState(["page"])
+        ...mapState(["page"]),
+        title() {
+            return this.$route.matched.map(r => {
+                return r.components.default.options
+                    ? r.components.default.options.pageTitle
+                    : r.components.default.pageTitle;
+            })[0];
+        },
+        pageVal() {
+            return this.$store.state.page;
+        }
         // ...mapGetters(['selectedUser'])
     },
     methods: {
@@ -133,9 +164,6 @@ export default {
         custonNavToggle: function() {
             $(".menu").toggleClass("is-active");
         }
-        // showFormModal() {
-        //     this.$root.$emit("bv::show::modal", "formModal");
-        // }
     },
     created() {
         if (process.browser) {

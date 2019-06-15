@@ -25,7 +25,7 @@ import ImpactStories from "~/components/Page-Components/ImpactStories.vue";
 
 export default {
     scrollToTop: true,
-    layout: "default",
+    // layout: "default",
     components: {
         Hero,
         Areas,
@@ -38,6 +38,13 @@ export default {
             areas: [],
             colleges: colleges
         };
+    },
+    transition: {
+        mode: "out-in",
+        css: false,
+        enter(el, done) {
+            console.log("enter from index");
+        }
     }
 };
 </script>

@@ -7,7 +7,7 @@
 @import "./_variables.scss";
 @import "./_typography.scss";
 @import "./_general.scss";
-@import "./Animations.scss";
+// @import "./Animations.scss";
 
 @import "./_include-media.scss";
 @import "./_HorizontalStepper.scss";
@@ -21,7 +21,6 @@
 @import "./_Accordion.scss";
 @import "./_Tabs.scss";
 @import "./_Footer.scss";
-@import "./_Transitions.scss";
 
 .modal {
     padding: 0 !important;

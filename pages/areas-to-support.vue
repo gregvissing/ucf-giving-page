@@ -122,6 +122,8 @@
 
 <script>
 import $ from "jquery";
+import Vuex from "vuex";
+import axios from "axios";
 import { mapState } from "vuex";
 import { areas } from "@/store";
 import VueScrollTo from "vue-scrollto";
@@ -130,7 +132,7 @@ export default {
     name: "areas-to-support",
     pageTitle: "Areas to Support",
     scrollToTop: true,
-    layout: "default",
+    layout: "internal",
     data() {
         return {
             areas: areas,

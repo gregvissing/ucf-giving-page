@@ -94,16 +94,6 @@
                     </b-collapse>
                 </b-card>
             </div>
-            <!-- <ul>
-                <li v-for="(fund, index) in alphaFunds" :key="index">
-                    <a :href="'https://foundation.uc.edu/donate?id=' + fund.guid">{{ fund.title }}</a>
-                    - {{ fund.college }}
-                </li>
-            </ul>-->
-
-            <!-- <div class="btn-container text-center">
-                <a :href="'https://foundation.uc.edu/donate?id=' + selectedCollege.guid" class="btn btn-primary">Donate Now</a>
-            </div>-->
         </b-modal>
     </div>
 </template>
@@ -220,10 +210,10 @@ $light-gray: #f8f8f8;
             z-index: 100;
         }
         .card-carousel--nav__left {
-            left: -35px;
+            left: -50px;
         }
         .card-carousel--nav__right {
-            right: -35px;
+            right: -50px;
         }
     }
     /* .nav-container {

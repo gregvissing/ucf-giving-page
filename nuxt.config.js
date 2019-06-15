@@ -70,7 +70,7 @@ export default {
     /*
      ** Global CSS
      */
-    css: ['@fortawesome/fontawesome-svg-core/styles.css', '@/assets/scss/style.scss'],
+    css: ['@fortawesome/fontawesome-svg-core/styles.css', '@/assets/scss/style.scss', '@/assets/scss/Animations.scss'],
 
     /*
      ** Plugins to load before mounting the App
@@ -99,15 +99,15 @@ export default {
     },
 
     /* Layout Transitions */
-    layoutTransition: {
-        name: "layout",
-        mode: ""
+    transition: {
+        name: "title-anim",
+        mode: "out-in"
     },
     /* Page Transitions */
-    pageTransition: {
-        name: "default",
-        mode: ""
-    },
+    // pageTransition: {
+    //     name: "default",
+    //     mode: "out-in"
+    // },
 
     /*
      ** Build configuration

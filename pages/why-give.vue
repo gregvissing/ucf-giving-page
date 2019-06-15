@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import Vuex from "vuex";
+import axios from "axios";
 import { mapState } from "vuex";
 import { whygive } from "@/store";
 
@@ -42,7 +44,7 @@ export default {
     name: "why-give",
     pageTitle: "Why Give",
     scrollToTop: true,
-    layout: "default",
+    layout: "internal",
     data() {
         return {
             cards: whygive,

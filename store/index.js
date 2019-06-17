@@ -118,6 +118,7 @@ export const whygive = [{
 
 // Colleges
 export const colleges = [{
+    id: 1,
     icon: "dna",
     text: "Allied Health Sciences",
     value: "allied-health-sciences",
@@ -125,6 +126,7 @@ export const colleges = [{
     column: ["CAHS", "AHS", "College of Allied Health Sciences"],
     description: "The UC College of Allied Health Sciences unleashes education through rigorous academic curricula, community service and experience based learning. Our unique collection of professional programs provides a wealth of opportunity to pursue a passion for human healing. From the very first year, our students are immersed in real world and transdisciplinary experiences, providing an unparalleled advantage in the marketplace."
 }, {
+    id: 2,
     icon: "palette",
     text: "Arts and Sciences",
     value: "arts-and-sciences",
@@ -132,6 +134,7 @@ export const colleges = [{
     column: ["A&S", "McMicken", "Arts & Sciences"],
     description: "Immerse yourself in a culture of intellectual rigor, among a community of critical thinkers and creative problem-solvers, for an innovative liberal arts education found only at the University of Cincinnati. Through approximately 65 undergraduate majors and 22 graduate programs, we provide a broad platform of scholarly opportunity, led by our award-winning faculty. Through internships, foundational career exploration and real-world problem-solving challenges, we prepare the next generation of explorers and visionaries to make an impact wherever they go. #NextLivesHere"
 }, {
+    id: 3,
     icon: "briefcase",
     text: "Business",
     value: "business",
@@ -139,6 +142,7 @@ export const colleges = [{
     column: ["Carl H. Lindner College of Business"],
     description: "At Lindner, we are committed to developing the next generation of business leaders. Through personalized career coaching and experiential learning, our students graduate with a competitive advantage in the workforce and are strongly positioned to address a multitude of today’s global business challenges."
 }, {
+    id: 4,
     icon: "music",
     text: "College-Conservatory of Music",
     value: "college-conservatory-of-music",
@@ -146,12 +150,14 @@ export const colleges = [{
     column: ["CCM", "College Conservatory of Music", "Conservatory", "Band", "Friends of CCM"],
     description: "Nationally ranked and internationally renowned, the University of Cincinnati College-Conservatory of Music (CCM) is a preeminent institution for the performing and media arts."
 }, {
+    id: 5,
     icon: "drafting-compass",
     text: "Design, Architecture, Art, and Planning",
     value: "design-architecture-art-and-planning",
     color: "red",
     column: ["DAAP", "Design, Architecture, Art & Planning"]
 }, {
+    id: 6,
     icon: "balance-scale",
     text: "Criminal Justice",
     value: "education-criminal-justice-and-human-services",
@@ -159,6 +165,7 @@ export const colleges = [{
     column: ["CECH", "Criminal Justice", "Education", "Human Services"],
     description: "The College of Education, Criminal Justice, and Human Services is committed to the pursuit of discovery and excellence in research, teaching, and service that addresses real world challenges and opportunities to create positive social change. We prepare students to maximize their ability to have a positive impact and to be contributing members to society."
 }, {
+    id: 7,
     icon: "calculator",
     text: "Engineering & Applied Science",
     value: "engineering-and-applied0-science",
@@ -166,6 +173,7 @@ export const colleges = [{
     column: ["CEAS", "Engineering Applied Science"],
     description: "The UC College of Engineering and Applied Science unleashes education by immersing students in a rigorous and innovative curriculum and culture of real-world, experience-based learning. The value of a CEAS degree is unparalleled, providing elevated placement, greater earning potential and unlimited post-graduate options."
 }, {
+    id: 8,
     icon: "graduation-cap",
     text: "Graduate School",
     value: "the-graduate-school",
@@ -174,6 +182,7 @@ export const colleges = [{
     description: "Graduate students play a critical role in the University of Cincinnati's status as a comprehensive research-intensive university. Through the Graduate School's 350+ graduate degree and certificate programs, University of Cincinnati graduate students generate knowledge and discovery that benefit society."
 
 }, {
+    id: 9,
     icon: "gavel",
     text: "Law",
     value: "law",
@@ -181,6 +190,7 @@ export const colleges = [{
     column: ["College of Law", "Law Center"],
     description: "Success starts here. Learn from top national and international legal practitioners and scholars. Enjoy life in a top-ranked city for leaders and entrepreneurs, families and Fortune 500 headquarters. Discover your calling in courtrooms, boardrooms and global studies. Make an impact—today and tomorrow. #NextLivesHere"
 }, {
+    id: 10,
     icon: "briefcase-medical",
     text: "Medicine",
     value: "medicine",
@@ -188,6 +198,7 @@ export const colleges = [{
     column: ["Medicine", "Health"],
     description: "The University of Cincinnati College of Medicine, located in the heart of the city just east of the university’s uptown campus, has a distinguished reputation for training prominent health care professionals and providing leading-edge research."
 }, {
+    id: 11,
     icon: "user-nurse",
     text: "Nursing",
     value: "nursing",
@@ -195,6 +206,7 @@ export const colleges = [{
     column: ["Nurse", "Nursing"],
     description: "Nurses are the lifeblood and connective tissue of health care. Our profession has evolved over time to adapt to fluctuating health care landscapes, but the biggest changes are still to come—and nursing is positioned to grow and lead the transformation of health care."
 }, {
+    id: 12,
     icon: "prescription-bottle-alt",
     text: "Pharmacy",
     value: "pharmacy",
@@ -202,6 +214,7 @@ export const colleges = [{
     column: ["James L. Winkle", "Pharmaceutical", "Pharmacy", "PharmD"],
     description: "Students become pharmacy leaders through collaborative research opportunities and real-world experience."
 }, {
+    id: 13,
     icon: "school",
     text: "Blue Ash College",
     value: "blue-ash-college",
@@ -209,6 +222,7 @@ export const colleges = [{
     column: ["Blue Ash", "UCBA"],
     description: "At UC Blue Ash College, we’re looking forward – to what’s next in academics, innovation and student engagement. We’re committed to a diverse, inclusive, dynamic environment where students thrive."
 }, {
+    id: 14,
     icon: "school",
     text: "Clermont College",
     value: "clermont-college",

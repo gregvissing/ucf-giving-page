@@ -5,8 +5,9 @@
             <p>Your gift to the UC and UC Health makes an impact where you want. Give to your favorite college, program or department, or contribute to the university’s most pressing needs.</p>
 
             <!-- <Carousel/> -->
+            <MyCarousel/>
         </b-container>
-        <SimpleCarousel id="area-carousel"/>
+        <!-- <SimpleCarousel id="area-carousel"/> -->
     </div>
 </template>
 
@@ -17,9 +18,11 @@ import { colleges } from "@/store";
 import Carousel from "~/components/UI-Components/Carousel.vue";
 import SimpleCarousel from "~/components/UI-Components/SimpleCarousel.vue";
 
+import MyCarousel from "~/components/UI-Components/MyCarousel.vue";
+
 export default {
     name: "areas",
-    components: { Carousel, SimpleCarousel },
+    components: { Carousel, SimpleCarousel, MyCarousel },
     props: {
         areas: {
             type: Array,

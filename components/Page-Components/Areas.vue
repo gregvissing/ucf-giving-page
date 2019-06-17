@@ -1,10 +1,13 @@
 <template>
-    <b-container>
-        <h1 class="text-center">Areas to Support</h1>
-        <p>Your gift to the UC and UC Health makes an impact where you want. Give to your favorite college, program or department, or contribute to the university’s most pressing needs.</p>
+    <div>
+        <b-container>
+            <h1 class="text-center">Areas to Support</h1>
+            <p>Your gift to the UC and UC Health makes an impact where you want. Give to your favorite college, program or department, or contribute to the university’s most pressing needs.</p>
 
-        <Carousel/>
-    </b-container>
+            <!-- <Carousel/> -->
+        </b-container>
+        <SimpleCarousel id="area-carousel"/>
+    </div>
 </template>
 
 <script>
@@ -12,10 +15,11 @@ import $ from "jquery";
 import _ from "lodash";
 import { colleges } from "@/store";
 import Carousel from "~/components/UI-Components/Carousel.vue";
+import SimpleCarousel from "~/components/UI-Components/SimpleCarousel.vue";
 
 export default {
     name: "areas",
-    components: { Carousel },
+    components: { Carousel, SimpleCarousel },
     props: {
         areas: {
             type: Array,
@@ -32,6 +36,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/style.scss";
+
+#area-carousel {
+    width: 80%;
+    margin: 0 auto 2em;
+}
 
 .container {
     padding: 2em 15px;

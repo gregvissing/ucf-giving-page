@@ -18,8 +18,32 @@
             <p>Your gift to the UC and UC Health makes an impact where you want. Give to your favorite college, program or department, or contribute to the university’s most pressing needs.</p>
             <p>UC and UC Health need your private support to continue growing and meeting the needs of students, faculty, researchers, doctors, patients and society. Explore our funding opportunities to determine the best match for your charitable gift.</p>
 
-            <b-navbar sticky class="mb-5 anchor-scroll-container">
-                <a
+            <!-- <b-navbar sticky class="mb-5 anchor-scroll-container"> -->
+                <b-list-group horizontal>
+                    <b-list-group-item href="#" class="btn btn btn-outline-primary  align-content-middle" v-scroll-to="{el: '#CollegesandSchool', offset: -138 }">Colleges and School
+                    </b-list-group-item>
+                    <b-list-group-item href="#" class="btn btn btn-outline-primary d-flex align-items-middle" v-scroll-to="{ el: '#Scholarships',
+                        offset: -138 }">Scholarships
+                    </b-list-group-item>
+                    <b-list-group-item href="#"
+                            class="btn btn btn-outline-primary d-flex align-items-middle"
+                            v-scroll-to="{
+                        el: '#UCHealth',
+                        offset: -138
+                        }"
+                        >UC Health
+                    </b-list-group-item>
+                    <b-list-group-item href="#"
+                            class="btn btn btn-outline-primary d-flex align-items-middle"
+                            v-scroll-to="{
+                        el: '#University-wideInitiatives',
+                        offset: -138
+                        }"
+                        >University-wide Initiatives
+                    </b-list-group-item>
+                </b-list-group>
+
+                <!-- <a
                     href="#"
                     class="btn btn btn-outline-primary"
                     v-scroll-to="{
@@ -50,7 +74,7 @@
                         el: '#University-wideInitiatives',
                         offset: -138
                         }"
-                >University-wide Initiatives</a>
+                >University-wide Initiatives</a>-->
             </b-navbar>
 
             <b-container class="area-container mt-3">
@@ -210,6 +234,13 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/style.scss";
 
+.list-group-horizontal {
+    a {
+        /* vertical-align: middle;
+        text-align: !important; */
+    }
+}
+
 body {
     height: auto;
     overflow-y: scroll;
@@ -348,11 +379,15 @@ ul {
 
 .anchor-scroll-container {
     margin: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
     a {
-        width: 24.7%;
-        display: inline-block;
+        width: 25%;
+        /* display: inline-block; */
         box-sizing: border-box;
         margin: 0 !important;
+        display: flex;
+        flex-basis: auto;
     }
     &.sticky-top {
         top: 0;

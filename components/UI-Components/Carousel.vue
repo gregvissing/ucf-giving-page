@@ -216,18 +216,8 @@ $light-gray: #f8f8f8;
             right: -50px;
         }
     }
-    /* .nav-container {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        min-height: 100%;
-    } */
     .card-carousel {
-        /* display: flex;
-        justify-content: center; */
         width: 100%;
-        /* margin-left: -130%;
-        @include transition(all 1.5s linear); */
 
         &--overflow-container {
             overflow: hidden;
@@ -277,7 +267,7 @@ $light-gray: #f8f8f8;
             -webkit-overflow-scrolling: touch;
             -ms-overflow-style: -ms-autohiding-scrollbar;
 
-            padding-bottom: 70px;
+            padding-bottom: 80px;
 
             .card-carousel--card {
                 margin: 0 10px;
@@ -304,7 +294,6 @@ $light-gray: #f8f8f8;
                 height: 0;
                 padding-bottom: 15%;
                 width: 0;
-
                 padding-left: 15%;
 
                 &:hover {

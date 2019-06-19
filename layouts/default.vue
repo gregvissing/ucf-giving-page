@@ -78,7 +78,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/style.scss";
-@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+/* @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"; */
 
 .title-anim-enter-active {
     animation: titlecoming 1s;

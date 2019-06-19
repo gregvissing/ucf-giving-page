@@ -6,6 +6,19 @@ const createStore = () => {
         state: {
             page: 'index',
 
+            cartTotal: "",
+            // cart: {},
+            cart: [{
+                    "Amount": 5,
+                    "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+                },
+                {
+                    "Amount": 15,
+                    "DesignationId": "fadfb8144d35-3439a5c7-9977-4f9c-ba11"
+                }
+
+            ],
+
             // pages: [{
             //     url: "ways-to-give",
             //     text: "Ways to Give"
@@ -35,16 +48,37 @@ const createStore = () => {
 
                 Gift: {
                     Designations: [{
-                        Amount: "",
-                        DesignationId: ""
-                    }],
+                            "Amount": 5,
+                            "DesignationId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+                        },
+                        {
+                            "Amount": 15,
+                            "DesignationId": "fadfb8144d35-3439a5c7-9977-4f9c-ba11"
+                        },
+                        {
+                            "Amount": 45,
+                            "DesignationId": "fadfb8144d35-3439a5c7-9977-4f9c-ba11"
+                        }
+                    ],
                     FinderNumber: "",
                     SourceCode: "",
                     IsAnonymous: false,
                     PaymentMethod: 1,
                     Comments: "Gift comments here.",
                     CreateGiftAidDeclaration: false,
-
+                    Attributes: [{
+                            "Value": "Volunteer;Member;Alumni",
+                            "AttributeId": "3439a5c7-9977-4f9c-ba11-fadfb8144d35"
+                        },
+                        {
+                            "Value": "1985",
+                            "AttributeId": "fadfb8144d35-3439a5c7-9977-4f9c-ba11"
+                        },
+                        {
+                            "Value": "1985",
+                            "AttributeId": "fadfb8144d35-3439a5c7-9977-4f9c-ba11"
+                        }
+                    ],
                 }
             }
 
@@ -86,11 +120,29 @@ const createStore = () => {
             },
             updateDonorStreetAddress(state, streetAddress) {
                 state.form.Donor.Address.StreetAddress = streetAddress
-            }
+            },
+
+            // Cart mutations
+            addItem: (state, item) => {
+                state.cartTotal++;
+                if (item.name in state.cart) {
+                    state.cart[item.name].count++;
+                } else {
+                    let stateItem = Object.assign({}, item);
+                    stateItem.count = 1;
+                    state.cart[item.name] = stateItem;
+                }
+            },
+            removeItem(state, {
+                todo
+            }) {
+                state.list.splice(state.list.indexOf(todo), 1)
+            },
         },
 
         getters: {
             page: state => state.page,
+            cartTotal: state => this.$store.state.form.Gift.Designations.length
         },
 
     });

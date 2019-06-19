@@ -20,14 +20,14 @@
                             <b-nav-item class="search" @click.prevent="searchToggle">
                                 <i class="fas fa-search"></i>
                             </b-nav-item>
-                            <!-- <b-nav-item class="cart" to="/cart/" v-show="cartTotal > 0">
-                            <div class="cartitem">
-                                <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
-                                <img src="~/assets/images/baseline-card_giftcard-24px.svg">
-
-                            </div>-->
-                            <!-- <font-awesome-icon icon="shopping-cart" size="lg"/> -->
-                            <!-- </b-nav-item> -->
+                            <!-- <b-nav-item class="cart" to="/cart/" v-show="cartTotal > 0"> -->
+                            <b-nav-item class="cart" :to="{ name: 'cart' }">
+                                <div class="cartitem">
+                                    <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
+                                    <img src="~/assets/images/baseline-card_giftcard-24px.svg">
+                                </div>
+                                <!-- <font-awesome-icon icon="shopping-cart" size="lg"/> -->
+                            </b-nav-item>
                         </b-navbar-nav>
                         <div class="search-container animateblock close">
                             <b-form-input
@@ -110,7 +110,8 @@ export default {
     },
     computed: {
         cartTotal() {
-            return this.$store.state.cartTotal;
+            // return this.$store.state.cartTotal;
+            return this.$store.state.form.Gift.Designations.length;
         },
         ...mapState(["page"]),
         title() {
